@@ -151,7 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Src\Main.cpp" />
+    <ClCompile Include="Src\Application.cpp" />
     <ClCompile Include="Src\MainWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
