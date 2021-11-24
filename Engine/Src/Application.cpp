@@ -3,7 +3,7 @@
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
 {
-	MainWindow Window(1600, 900);
+	MainWindow Window(1280, 720);
 	ShowWindow(Window.GetHandle(), nCmdShow);
 
 	MSG Message{};
