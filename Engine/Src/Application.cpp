@@ -3,7 +3,7 @@
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
 {
-	MainWindow Window(1280, 720);
+	MainWindow Window(1600, 900);
 	ShowWindow(Window.GetHandle(), nCmdShow);
 
 	MSG Message{};
@@ -11,6 +11,9 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
 	{
 		TranslateMessage(&Message);
 		DispatchMessage(&Message);
+
+		Window.GFX()->Clear(0.1f, 0.0f, 0.3f, 1.0f);
+		Window.GFX()->Present();
 	}
 
 	return 0;

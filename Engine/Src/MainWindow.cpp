@@ -7,13 +7,13 @@ MainWindow::WC_MAIN_WINDOW::WC_MAIN_WINDOW()
 	WNDCLASS wcMainWindow{};
 	wcMainWindow.lpfnWndProc	= MainWindow::WindowProcedure;
 	wcMainWindow.hInstance		= GetModuleHandle(NULL);
-	wcMainWindow.lpszClassName	= GetName();
+	wcMainWindow.lpszClassName	= Name();
 	RegisterClass(&wcMainWindow);
 }
 
 MainWindow::WC_MAIN_WINDOW::~WC_MAIN_WINDOW()
 {
-	UnregisterClass(GetName(), GetModuleHandle(NULL));
+	UnregisterClass(Name(), GetModuleHandle(NULL));
 }
 
 MainWindow::MainWindow(int Width, int Height)
@@ -21,7 +21,7 @@ MainWindow::MainWindow(int Width, int Height)
 {
 	m_Handle = CreateWindowEx(
 		0,
-		WC_MAIN_WINDOW::Instance.GetName(),
+		WC_MAIN_WINDOW::Get().Name(),
 		L"Scene",
 		WS_OVERLAPPEDWINDOW,
 		
@@ -33,6 +33,8 @@ MainWindow::MainWindow(int Width, int Height)
 		GetModuleHandle(NULL),
 		this
 	);
+
+	m_Renderer = std::make_unique<Renderer>(m_Handle);
 }
 
 MainWindow::~MainWindow()
