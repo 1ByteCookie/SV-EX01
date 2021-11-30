@@ -13,6 +13,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
 		DispatchMessage(&Message);
 
 		Window.GFX()->Clear(0.1f, 0.0f, 0.3f, 1.0f);
+		Window.GFX()->Draw();
 		Window.GFX()->Present();
 	}
 
