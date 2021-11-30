@@ -2,19 +2,21 @@
 
 #include <Windows.h>
 #include <d3d11.h>
+#include "Mesh.hpp"
 
 class Renderer
 {
 public:
 	void Clear(float R, float G, float B, float A);
 	void Present();
+	void InitViewPort();
+	void Draw(Mesh& mesh);
 
 	Renderer(HWND Handle);
 	~Renderer();
 	Renderer(const Renderer& Object) = delete;
 
-	void DrawInit();
-	void Draw();
+	inline auto& GetDevice() { return m_Device; }
 
 private:
 
@@ -25,10 +27,4 @@ private:
 	ID3D11DeviceContext*		m_ImmediateContext;
 
 	ID3D11RenderTargetView*		m_RenderTarget;
-
-	//===================
-	ID3D11Buffer*			m_VertexBuffer;
-	ID3D11Buffer*			m_IndexBuffer;
-	ID3D11VertexShader*		m_VS;
-	ID3D11PixelShader*		m_PS;
 };

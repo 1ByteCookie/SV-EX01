@@ -3,6 +3,7 @@
 #include <Windows.h>
 #include <memory>
 #include "Renderer.hpp"
+#include "ResourceManager.hpp"
 
 class MainWindow
 {
@@ -27,6 +28,7 @@ public:
 
 	inline HWND GetHandle() const { return m_Handle; }
 	inline const auto& GFX() { return m_Renderer.get(); }
+	inline const auto& Resource() { return m_Manager.get(); }
 
 private:
 	static LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
@@ -36,5 +38,6 @@ private:
 	int		m_Width;
 	int		m_Height;
 
-	std::unique_ptr<Renderer> m_Renderer;
+	std::unique_ptr<Renderer>			m_Renderer;
+	std::unique_ptr<ResourceManager>	m_Manager;
 };

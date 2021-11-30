@@ -88,11 +88,15 @@
   <ItemGroup>
     <ClCompile Include="Src\Application.cpp" />
     <ClCompile Include="Src\MainWindow.cpp" />
+    <ClCompile Include="Src\Mesh.cpp" />
     <ClCompile Include="Src\Renderer.cpp" />
+    <ClCompile Include="Src\ResourceManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MainWindow.hpp" />
+    <ClInclude Include="Src\Mesh.hpp" />
     <ClInclude Include="Src\Renderer.hpp" />
+    <ClInclude Include="Src\ResourceManager.hpp" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Shaders\PixelShader.hlsl">

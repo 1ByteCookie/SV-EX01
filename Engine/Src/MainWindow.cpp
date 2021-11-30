@@ -35,6 +35,7 @@ MainWindow::MainWindow(int Width, int Height)
 	);
 
 	m_Renderer = std::make_unique<Renderer>(m_Handle);
+	m_Manager = std::make_unique<ResourceManager>(m_Renderer->GetDevice());
 }
 
 MainWindow::~MainWindow()
