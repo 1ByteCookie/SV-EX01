@@ -8,6 +8,7 @@
 struct Vertex
 {
 	DirectX::XMFLOAT2 Position;
+	DirectX::XMFLOAT4 Color;
 };
 
 class ResourceManager

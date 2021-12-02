@@ -1,4 +1,12 @@
-float4 main() : SV_TARGET
+
+struct InputData
 {
-	return float4(0.0f, 1.0f, 1.0f, 1.0f);
+    float4 Position : SV_POSITION;
+    float4 Color : _COLOR_;
+};
+
+
+float4 main(InputData _Input) : SV_TARGET
+{
+    return _Input.Color;
 }

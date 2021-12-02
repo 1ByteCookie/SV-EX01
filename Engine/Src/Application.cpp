@@ -8,14 +8,16 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
 
 	std::vector<Vertex> Vertices =
 	{
-		Vertex{ DirectX::XMFLOAT2(-0.5f, -0.5f) },
-		Vertex{ DirectX::XMFLOAT2( 0.0f,  0.5f) },
-		Vertex{ DirectX::XMFLOAT2( 0.5f, -0.5f) }
+		Vertex{ DirectX::XMFLOAT2(-0.5f, -0.5f), DirectX::XMFLOAT4(1.0f, 0.0f, 0.0f, 1.0f) },
+		Vertex{ DirectX::XMFLOAT2( 0.5f,  0.5f), DirectX::XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f) },
+		Vertex{ DirectX::XMFLOAT2( 0.5f, -0.5f), DirectX::XMFLOAT4(0.0f, 0.0f, 1.0f, 1.0f) },
+		Vertex{ DirectX::XMFLOAT2(-0.5f,  0.5f), DirectX::XMFLOAT4(1.0f, 0.0f, 1.0f, 1.0f) }
 	};
 
 	std::vector<unsigned int> Indices =
 	{
-		0, 1, 2
+		0, 1, 2,
+		3, 0, 1
 	};
 
 	Mesh Triangle = Window.Resource()->CreateMesh(	Vertices,
