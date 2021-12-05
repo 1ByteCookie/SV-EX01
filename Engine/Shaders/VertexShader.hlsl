@@ -11,10 +11,15 @@ struct InputData
     float4 Color : COLOR0;
 };
 
+cbuffer Constants
+{
+    row_major matrix Model;
+};
+
 OutputData main(InputData _Input)
 {
     OutputData _Output;
-    _Output.Position = float4(_Input.Position, 0.0f, 1.0f);
+    _Output.Position = mul(float4(_Input.Position, 0.0f, 1.0f), Model);
     _Output.Color = _Input.Color;
     
     return _Output;

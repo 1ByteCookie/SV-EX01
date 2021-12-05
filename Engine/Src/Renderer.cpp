@@ -83,6 +83,7 @@ void Renderer::Draw(Mesh& mesh)
 	m_ImmediateContext->IASetVertexBuffers(0, 1, &mesh.GetVB(), &mesh.GetStride(), &Offset);
 	m_ImmediateContext->IASetIndexBuffer(mesh.GetIB(), DXGI_FORMAT_R32_UINT, 0);
 
+	m_ImmediateContext->VSSetConstantBuffers(0, 1, &mesh.GetCB());
 	m_ImmediateContext->VSSetShader(mesh.GetVS(), NULL, NULL);
 	m_ImmediateContext->PSSetShader(mesh.GetPS(), NULL, NULL);
 

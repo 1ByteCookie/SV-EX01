@@ -20,8 +20,12 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
 		3, 0, 1
 	};
 
+	cBuffer Constants{};
+	Constants.Model = DirectX::XMMatrixRotationZ(-12.0f) * DirectX::XMMatrixTranslation(0.25f, -0.25f, 0.0f);
+
 	Mesh Triangle = Window.Resource()->CreateMesh(	Vertices,
 													Indices,
+													Constants,
 													L"Shaderbin/VertexShader.cso",
 													L"ShaderBin/PixelShader.cso");
 
