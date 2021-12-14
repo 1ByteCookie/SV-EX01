@@ -13,7 +13,7 @@ struct InputData
 
 cbuffer Constants
 {
-    row_major matrix Model;
+    matrix Model;
 };
 
 OutputData main(InputData _Input)

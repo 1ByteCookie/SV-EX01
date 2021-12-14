@@ -21,7 +21,11 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
 	};
 
 	cBuffer Constants{};
-	Constants.Model = DirectX::XMMatrixRotationZ(-12.0f) * DirectX::XMMatrixTranslation(0.25f, -0.25f, 0.0f);
+	Constants.Model = DirectX::XMMatrixTranspose(
+		DirectX::XMMatrixTranslation(1.0f, 0.0f, 5.0f) *
+		DirectX::XMMatrixRotationZ(DirectX::XMConvertToRadians(30.0f)) *
+		DirectX::XMMatrixPerspectiveLH(1.0f, 720.0f/1280.0f, 1.0f, 100.0f)
+	);
 
 	Mesh Triangle = Window.Resource()->CreateMesh(	Vertices,
 													Indices,
